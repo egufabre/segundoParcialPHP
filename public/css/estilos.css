@@ -1,0 +1,18 @@
+body {
+    max-width: 80%;
+}
+nav {
+    margin-bottom: 80%;
+}
+#version{
+    font-size: 0.66em;
+    font-weight: bold;
+}
+img {
+    margin: 20px;
+    width: 60%; 
+}    
+#sidebar {
+    float: left;
+    width: 15%;
+}
