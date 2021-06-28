@@ -3,10 +3,10 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="verPuertos" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Nuestro "Blog-Sito"</title>
-    <link rel="stylesheet" href="public/css/estilos.css">    
+    <link rel="stylesheet" href="../public/css/estilos.css">    
   </head>
 
   <body>
@@ -35,19 +35,39 @@
 </section>
 
 <aside>
-    <div id="sidebar"> 
-    <div class="title">Historial de publicaciones
-    </div>
+
+ 
+    <div class="sidebar">Historial de publicaciones 
         <ul>
             <li class="Julio"><a href="https://www.intercambiosvirtuales.org/category/anime">Julio</a></li>
         </ul>       
   </div>
-</aside>
 
-
-
-
-
+  </aside>
 
   </body>
+
+  <title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div class="w3-container">
+
+<h2 class="center">Páginas</h2>
+
+
+<div class="w3-center">
+<div class="w3-bar">
+  <a href="#" class="w3-button">&laquo;</a>
+  <a href="#" class="w3-button">1</a>
+  <a href="#" class="w3-button">2</a>
+  <a href="#" class="w3-button">3</a>
+  <a href="#" class="w3-button">4</a>
+  <a href="#" class="w3-button">&raquo;</a>
+</div>
+</div>
+
+</div>
+</body>
+
 </html>

@@ -12,7 +12,18 @@ img {
     margin: 20px;
     width: 60%; 
 }    
-#sidebar {
-    float: left;
+aside {
+    float: right;
     width: 15%;
 }
+
+.sidebar{
+
+    float: right;
+    width: 15%;
+}
+
+h2.center{
+    text-align: center;
+  }
+
