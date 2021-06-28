@@ -39,10 +39,15 @@
     <div class="title">Historial de publicaciones
     </div>
         <ul>
-            <li class="Julio">Julio</li>
+            <li class="Julio"><a href="https://www.intercambiosvirtuales.org/category/anime">Julio</a></li>
         </ul>       
   </div>
 </aside>
+
+
+
+
+
 
   </body>
 </html>
