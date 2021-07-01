@@ -6,6 +6,6 @@ create table autor(
     nombre varchar(20),
     apellido varchar(20),
     mail varchar(30),
-    password varchar(50),
+    password varchar(255),
     foto blob
 );

@@ -4,27 +4,26 @@
     
     class AutorControlador{
       
-        public static function AltaDeAutor($request){
-
-            if($nombre !==  ""  && $apellido !== "" && $email !== "" && $password !== "" && $foto !== ""){
-                try{
+         public static function AltaDeAutor($request){
+              echo "entre funcion";
                     $p = new AutorModelo();
                     $p -> nombre = $request['post']['nombre'];
                     $p -> apellido = $request['post']['apellido']; 
-                    $p -> mail = $request['post']['mail'];
+                    $p -> email = $request['post']['email'];
                     $p -> password = $request['post']['password'];
                     $p -> foto = $request['post']['foto'];
+                    
+                    echo "llegue";
                     $p -> Guardar();
                     return generarHtml('crearUsuario',['exito' => true]);
+                         
                 }
-                catch(Exception $p){
-                    error_log($p -> getMessage());
-                    return generarHtml('crearUsuario',['exito' =>false]);
-                }
-            }
-            return generarHtml('crearUsuario',['exito' => false]);
-        }
+           
+        } 
+
+      
 
 
 
-    }
+
+    

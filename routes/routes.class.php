@@ -33,7 +33,7 @@
                     'get'  => $_GET                       
             ];
 
-            call_user_func_array($funcion,$parametros);
+            call_user_func_array($funcion,$parametros,);
 
         } 
     }     

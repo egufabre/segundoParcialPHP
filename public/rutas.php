@@ -3,6 +3,7 @@
     require '../routes/routes.class.php';
     
     Routes::Add("/alta","get","AutorControlador::AltaDeAutor");
-    //Routes::Add("/login","post","UsuarioController::IniciarSesion");
+    
+    Routes::Add("/alta","post","AutorControlador::AltaDeAutor");
     
     Routes::Run();
