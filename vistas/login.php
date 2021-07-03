@@ -15,27 +15,26 @@
         
         <div class="col-md-5 card my-4">
           <div class='card-body'>
-            <form action='<?php echo constant('URL').
-            'loginAdmin/validate'?>
-            
-    
-
+            <form action="/log" method="post">
+          
 
               <div class="form-group">
-                <input type="text" name="userLogin" 
+                <input type="text" name="nombre" 
                 placeholder="Correo del usuario" 
                 class="form-control" required><br>
                 
-                <input type="password" name="passLogin" 
+                <input type="password" name="password" 
                 placeholder="Contraseña del usuario" 
                 class="form-control" required><br>
                 
-                <input type="submit" name='sendLogin' 
+                <input type="submit" name="sendLogin"
                 value="Enviar"
                 class="btn btn-primary btn-block">
+
+
               </div>
             </form>
-            <a href='<?php echo constant('URL');?>
+           <!---------  <a href='?php echo constant('URL');?>                -----------> 
               <button class='btn btn-light btn-block'>Volver</button>
             </a>
           </div>

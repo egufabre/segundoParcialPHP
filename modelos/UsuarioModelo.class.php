@@ -4,9 +4,9 @@
     class UsuarioModelo extends Modelo{
         public $id;
         public $nombre;
+        public $apellido;
+        public $mail;
         public $password;
-        public $tipo;
-        public $nombreCompleto;
 
         public function Guardar(){
 
@@ -20,16 +20,17 @@
 
         private function prepararUpdate(){
             $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE usuario set id = ?, nombre = ?, password = ?, tipo = ?, nombre_completo = ?";
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_params("issis",
+            $this -> sentencia -> bind_params("issss",
                 $this -> id,
                 $this -> nombre,
-                $this -> password,
-                $this -> tipo,
-                $this -> nombreCompleto 
+                $this -> apellido,
+                $this -> mail,
+                $this -> password 
             );
         }
+        //funciona
         private function prepararInsert(){
             $this -> password = $this -> hashearPassword($this -> password);
             $sql = "INSERT INTO autor (nombre,apellido,mail,password) VALUES (?,?,?,?)";
@@ -66,13 +67,16 @@
             else throw new Exception("Error al iniciar sesion");
         }
 
+
+
+
         private function compararPasswords($passwordHasheado){
             return password_verify($this -> password, $passwordHasheado);
         }
 
 
         private function prepararAutenticacion(){
-            $sql = "SELECT id,nombre,password,tipo,nombre_completo FROM usuario WHERE nombre = ? ";
+            $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE nombre = ? ";
             $this -> sentencia = $this -> conexion -> prepare($sql);
             $this -> sentencia -> bind_param("s", $this -> nombre);
         }
@@ -80,8 +84,9 @@
         private function asignarDatosDeUsuario($resultado){
             $this -> id = $resultado['id'];
             $this -> nombre = $resultado['nombre'];
-            $this -> tipo = $resultado['tipo'];
-            $this -> $resultado['nombre_completo'];
+            $this -> apellido = $resultado['apellido'];
+            $this -> mail = $resultado['mail'];
+            $this -> password = $resultado['password'];
         }
         
         private function hashearPassword($password){

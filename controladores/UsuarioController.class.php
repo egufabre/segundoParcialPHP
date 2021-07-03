@@ -3,6 +3,8 @@
     require '../utils/autoloader.php';
 
     class UsuarioController{
+
+
         public static function IniciarSesion($request){
             try{
                 $u = new UsuarioModelo();
@@ -10,36 +12,46 @@
                 $u -> password = $request['post']['password'];
                 $u -> Autenticar();
                 self::crearSesion($u);                
-                header("Location: /principal");
+                header("Location: /log");
             }
-            catch (Exception $e) {
+            catch (Exception $u) {
                 error_log("Fallo login del usuario " . $request['post']['nombre']);
-                generarHtml("formularioLogin",["falla" => true]);
+                generarHtml("404",["falla" => true]);
             }
 
         }
-
-        public static function MostrarLogin($request){
-            session_start();
-            if(isset($_SESSION['autenticado'])) header("Location: /principal");
-            else return cargarVista("formularioLogin");
-        }
-
-        public static function MostrarMenuPrincipal($request){
-            return cargarVista("menuPrincipal");
-        }
-
 
         private static function crearSesion($usuario){
             session_start();
             $_SESSION['usuarioId'] = $usuario -> id;
             $_SESSION['usuarioNombre'] = $usuario -> nombre;
-            $_SESSION['usuarioTipo'] = $usuario -> tipo;
-            $_SESSION['usuarioNombreCompleto'] = $usuario -> nombreCompleto;
+            $_SESSION['usuarioApellido'] = $usuario -> apellido;
+            $_SESSION['usuarioMail'] = $usuario -> mail;
             $_SESSION['autenticado'] = true;
 
         }
 
+
+
+
+        public static function MostrarLogin($request){
+            session_start();
+            if(isset($_SESSION['autenticado'])) header("Location: /log");
+            else return cargarVista("login");
+        }
+
+        public static function MostrarMenuPrincipal($request){
+            return cargarVista("index");
+        }
+
+
+      
+
+
+
+
+
+        //funciona
         public static function AltaDeUsuario($request){
             try{
                 $u = new UsuarioModelo();
