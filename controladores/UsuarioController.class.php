@@ -14,7 +14,7 @@
                 self::crearSesion($u);                
                 header("Location: /log");
             }
-            catch (Exception $u) {
+            catch (Exception $e) {
                 error_log("Fallo login del usuario " . $request['post']['nombre']);
                 generarHtml("404",["falla" => true]);
             }

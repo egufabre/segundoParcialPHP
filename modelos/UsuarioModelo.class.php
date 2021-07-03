@@ -68,13 +68,6 @@
         }
 
 
-
-
-        private function compararPasswords($passwordHasheado){
-            return password_verify($this -> password, $passwordHasheado);
-        }
-
-
         private function prepararAutenticacion(){
             $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE nombre = ? ";
             $this -> sentencia = $this -> conexion -> prepare($sql);
@@ -86,9 +79,12 @@
             $this -> nombre = $resultado['nombre'];
             $this -> apellido = $resultado['apellido'];
             $this -> mail = $resultado['mail'];
-            $this -> password = $resultado['password'];
+
         }
         
+        private function compararPasswords($passwordHasheado){
+            return password_verify($this -> password, $passwordHasheado);
+        }
         private function hashearPassword($password){
             return password_hash($password,PASSWORD_DEFAULT);
         }

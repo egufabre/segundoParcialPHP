@@ -15,6 +15,12 @@
         
         <div class="col-md-5 card my-4">
           <div class='card-body'>
+
+
+          <?php if(isset($parametros['falla']) && $parametros['falla'] == true): ?>
+            <div style="color: #FF0000"> Login Incorrecto</div>
+          <?php endif; ?>
+
             <form action="/log" method="post">
           
 
@@ -27,8 +33,7 @@
                 placeholder="Contraseña del usuario" 
                 class="form-control" required><br>
                 
-                <input type="submit" name="sendLogin"
-                value="Enviar"
+                <input type="submit"  value="Enviar"
                 class="btn btn-primary btn-block">
 
 
