@@ -17,9 +17,11 @@ services:
       - "3306:3306"
     restart: unless-stopped 
     environment:
-      - MYSQL_ROOT_PASSWORD=parcial2
-      - MYSQL_USER=utu
-      - MYSQL_PASSWORD=buceo
-      - MYSQL_DATABASE=segundoParcial
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=usuario
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DATABASE=base
     volumes:
       - ./mysql:/var/lib/mysql
+  
+

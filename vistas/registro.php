@@ -35,7 +35,7 @@
 
 <div class="form-group">
     <label>Ingrese su correo electrónico:</label>
-    <input type="email" class="form-control" minlength="3" placeholder="ejemplo@ejemplo.com" title="Agregar correo electrónico" name="email" id="email" required>
+    <input type="email" class="form-control" minlength="3" placeholder="ejemplo@ejemplo.com" title="Agregar correo electrónico" name="mail" id="mail" required>
 </div>
 
 
@@ -44,13 +44,14 @@
     <input type="password" class="form-control" maxlength="15" minlength="8" required pattern="[A-Za-z0-9]+" placeholder="completar campo" title="Solo letras y números" name="password" id="password" required>
 </div>
 
-
-
+ <!--  
 <div class="form-group">
      <label>Subir foto de perfil</label>
       <input type="file" class="form-control-file border" name="foto" id="foto" style="border-radius:3px; padding:10px;">
     </div> 
- 
+ -->
+
+
 <input type="submit" value="Enviar" >
   </form>
 </div>
