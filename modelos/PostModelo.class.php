@@ -36,7 +36,21 @@
                 $this -> cuerpopost
             );
         }
-    
+        public function obtenerTodos(){
+            $sql = "SELECT titulopost,cuerpopost,fechapost FROM posteo";
+            $filas = array();
+            foreach($this -> conexion -> query($sql) -> fetch_all(MYSQLI_ASSOC) as $fila){
+                $u = new PostModelo();
+                $u -> titulopost = $fila['titulopost'];
+                $u -> cuerpopost = $fila['cuerpopost'];
+                $u -> fechapost = $fila['fechapost'];
+                array_push($filas,$u);
+            }
+            if($this -> conexion -> error){
+                throw new Exception("Error al obtener las personas: " . $this -> conexion -> error);
+            }
+            return $filas;
+        }
     
     
     
