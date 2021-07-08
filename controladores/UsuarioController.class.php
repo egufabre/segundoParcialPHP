@@ -43,7 +43,9 @@
         }
 
         public static function MostrarMenuPrincipal($request){
-            return cargarVista("index");
+            session_start();
+            if(isset($_SESSION['autenticado'])) header("Location: /index");
+            else return cargarVista("index");
         }
 
 

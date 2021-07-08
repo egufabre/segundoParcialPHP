@@ -93,7 +93,7 @@
         }
 
 
-        private function ejecutarMiddlewareView($middleware,$vista){
+        private static function ejecutarMiddlewareView($middleware,$vista){
             $contexto = [
                 'post' => $_POST,
                 'get' => $_GET,
