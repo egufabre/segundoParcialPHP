@@ -31,7 +31,7 @@
 
 <section>
     <article>
-    
+    <br><br><br><br>
     <?php 
     foreach ($parametros['posts']  as $fila)
     {   
@@ -42,7 +42,7 @@
     
      </article>
 </section>
-
+<br><br><br><br>
 <aside>
 
  

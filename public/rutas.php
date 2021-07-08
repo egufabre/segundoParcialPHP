@@ -17,7 +17,7 @@
    
 
     Routes::Add("/index","post","UsuarioController::MostrarMenuPrincipal","AuthMiddleware::EstaAutenticado");
-    Routes::AddView("/index","index","UsuarioController::MostrarMenuPrincipal");
+    //Routes::AddView("/index","index","UsuarioController::MostrarMenuPrincipal");
     Routes::AddView("/index","index","PostController::ObtenerPost");
 
 
