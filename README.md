@@ -14,7 +14,7 @@ create table autor(
 USAR ESTAS TABLAS POR AHORA
 
 create table autor(
-    idautor serial primary key  NOT NULL,
+    id int primary key  NOT NULL,
     nombre varchar(20) NOT NULL,
     apellido varchar(20) NOT NULL,
     mail varchar(30) NOT NULL,
@@ -23,21 +23,15 @@ create table autor(
 
 
 create table posteo (
-    idposteo serial PRIMARY KEY NOT NULL,
+    id int PRIMARY KEY NOT NULL,
     titulopost varchar(40) NOT NULL,
     cuerpopost varchar(500) NOT NULL,
     fechapost timestamp  NOT NULL
 );
 
 create table autorPosteo (
-    idautor serial primary key NOT NULL,
-    idposteo serial PRIMARY KEY NOT NULL
+    idautor int NOT NULL,
+    idposteo int NOT NULL,
+    CONSTRAINT idautor_autorPosteo_fk FOREIGN KEY (idautor) REFERENCES autor (id),
+    CONSTRAINT idposteo_autorPosteo_fk FOREIGN KEY (idposteo) REFERENCES posteo (id)
 );
-
-ALTER TABLE autorPosteo
-ADD FOREIGN KEY (idautor)
-REFERENCES autor(idautor);
-
-ALTER TABLE autorPosteo
-ADD FOREIGN KEY (idposteo)
-REFERENCES posteo(idposteo);
