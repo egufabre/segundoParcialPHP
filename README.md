@@ -14,16 +14,30 @@ create table autor(
 USAR ESTAS TABLAS POR AHORA
 
 create table autor(
-    id int primary key auto_increment NOT NULL,
+    idautor serial primary key  NOT NULL,
     nombre varchar(20) NOT NULL,
     apellido varchar(20) NOT NULL,
     mail varchar(30) NOT NULL,
-    password varchar(255) NOT NULL);
+    password varchar(255) NOT NULL
+);
 
 
 create table posteo (
-id serial NOT NULL,
-titulopost varchar(40) NOT NULL,
-cuerpopost varchar(500) NOT NULL,
-fechapost timestamp  NOT NULL,
-PRIMARY KEY (id));
+    idposteo serial PRIMARY KEY NOT NULL,
+    titulopost varchar(40) NOT NULL,
+    cuerpopost varchar(500) NOT NULL,
+    fechapost timestamp  NOT NULL
+);
+
+create table autorPosteo (
+    idautor serial primary key NOT NULL,
+    idposteo serial PRIMARY KEY NOT NULL
+);
+
+ALTER TABLE autorPosteo
+ADD FOREIGN KEY (idautor)
+REFERENCES autor(idautor);
+
+ALTER TABLE autorPosteo
+ADD FOREIGN KEY (idposteo)
+REFERENCES posteo(idposteo);

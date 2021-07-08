@@ -17,6 +17,20 @@ class PostController{
         }
     }
 
+    public static function ObtenerPost(){
+        $u = new PostModelo();
+        $posts = array();
+        foreach($u -> obtenerTodos() as $fila){
+            $post = array(
+                "titulopost" => $fila -> titulopost,
+                "cuerpopost" => $fila -> cuerpopost,
+                "fechapost" => $fila -> fechapost  
+            );
+            array_push($posts,$post);
+        }
+        return generarHtml('index',['posts' => $posts]);
+    }
+
 
 
 

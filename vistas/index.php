@@ -30,7 +30,17 @@
 </nav><br><br><br><br>
 
 <section>
-    <article> </article>
+    <article>
+    
+    <?php 
+    foreach ($parametros['posts']  as $fila)
+    {   
+        echo $fila['titulopost'] . " " . $fila['cuerpopost'] . " " . $fila['fechapost'] . "<br>";
+    }
+  
+    ?>
+    
+     </article>
 </section>
 
 <aside>
