@@ -6,6 +6,8 @@
     Routes::AddView("/alta","registro");
     
     Routes::Add("/log","get","UsuarioController::MostrarLogin");
+    Routes::AddView("/log","login");
+
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
    
 

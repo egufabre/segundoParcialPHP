@@ -13,6 +13,8 @@
                 $u -> Autenticar();
                 self::crearSesion($u);                
                 header("Location: /log");
+                
+
             }
             catch (Exception $e) {
                 error_log("Fallo login del usuario " . $request['post']['nombre']);
@@ -23,10 +25,10 @@
 
         private static function crearSesion($usuario){
             session_start();
-            $_SESSION['usuarioId'] = $usuario -> id;
-            $_SESSION['usuarioNombre'] = $usuario -> nombre;
-            $_SESSION['usuarioApellido'] = $usuario -> apellido;
-            $_SESSION['usuarioMail'] = $usuario -> mail;
+            $_SESSION['id'] = $usuario -> id;
+            $_SESSION['nombre'] = $usuario -> nombre;
+            $_SESSION['apellido'] = $usuario -> apellido;
+            $_SESSION['mail'] = $usuario -> mail;
             $_SESSION['autenticado'] = true;
 
         }
@@ -45,12 +47,9 @@
         }
 
 
+
+
       
-
-
-
-
-
         //funciona
         public static function AltaDeUsuario($request){
             try{
