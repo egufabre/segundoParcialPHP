@@ -68,4 +68,5 @@
                 return generarHtml('formularioInsertUsuario',['exito' =>false]);
             }
         }
+        
     }

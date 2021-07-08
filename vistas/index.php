@@ -46,10 +46,13 @@
 <aside>
 
  
-    <div class="sidebar">Historial de publicaciones 
-        <ul>
-            <li class="Julio"><a href="https://www.intercambiosvirtuales.org/category/anime">Julio</a></li>
-        </ul>       
+  <div class="sidebar">Historial de publicaciones 
+    <?php 
+      foreach ($arrayFechas as $fecha){
+        $valores = explode("-", $fecha);
+        echo "<a href= '/index?anio=" . $valores[1] . "&mes" . $valores[0] . "'> " . $valores[1] . " " . $valores[0] . "</a>";
+      }  
+    ?>  
   </div>
 
   </aside>
