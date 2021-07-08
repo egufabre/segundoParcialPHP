@@ -14,7 +14,7 @@ create table autor(
 USAR ESTAS TABLAS POR AHORA
 
 create table autor(
-    id int primary key  NOT NULL,
+    id int auto_increment primary key  NOT NULL,
     nombre varchar(20) NOT NULL,
     apellido varchar(20) NOT NULL,
     mail varchar(30) NOT NULL,
@@ -23,7 +23,7 @@ create table autor(
 
 
 create table posteo (
-    id int PRIMARY KEY NOT NULL,
+    id int auto_increment PRIMARY KEY NOT NULL,
     titulopost varchar(40) NOT NULL,
     cuerpopost varchar(500) NOT NULL,
     fechapost timestamp  NOT NULL
