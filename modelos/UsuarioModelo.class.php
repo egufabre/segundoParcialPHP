@@ -85,6 +85,7 @@
         private function compararPasswords($passwordHasheado){
             return password_verify($this -> password, $passwordHasheado);
         }
+        
         private function hashearPassword($password){
             return password_hash($password,PASSWORD_DEFAULT);
         }

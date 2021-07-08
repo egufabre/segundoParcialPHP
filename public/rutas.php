@@ -5,6 +5,11 @@
     Routes::Add("/alta","post","UsuarioController::AltaDeUsuario");
     Routes::AddView("/alta","registro");
     
+    Routes::Add("/altapost","post","PostController::AltaDePost");
+    Routes::AddView("/altapost","ingresarpost");
+
+
+
     Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::AddView("/log","login");
 
