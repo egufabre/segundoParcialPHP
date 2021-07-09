@@ -9,14 +9,12 @@
     Routes::AddView("/altapost","ingresarpost");
 
 
-    Routes::Add("/log","get","UsuarioController::MostrarLogin");
+   // Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
-    //Routes::Add("/index","get","UsuarioController::MostrarMenuPrincipal");
     Routes::AddView("/log","login");
 
 
     Routes::Add("/index","post","UsuarioController::MostrarMenuPrincipal","AuthMiddleware::EstaAutenticado");
-    //Routes::AddView("/index","index","UsuarioController::MostrarMenuPrincipal");
     Routes::AddView("/index","index","PostController::ObtenerPost");
 
 
