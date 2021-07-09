@@ -53,7 +53,7 @@
       foreach ($contexto['fechas']  as $fecha)
       {
         
-        $valores = explode("-", $fecha);
+        $valores = explode("-", $fecha['mes'] . " ". $fecha['anio']);
         echo "<a href= '/index?anio=" . $valores[1] . "&mes" . $valores[0] . "'> " . $valores[1] . " " . $valores[0] . "</a>";
       }  
     ?>  
