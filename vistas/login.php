@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Login</title>
-    <link href="style.css" rel="stylesheet" 
-    type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+    <title>Nuevo Usuario</title>
+    <link rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background:#f7f7f5">
 
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-md-5 card my-4">
-          <div class='card-body'>
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sx-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
 
+<div class="col-sx-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 form">
+  <h3>LOGIN</h3>
+  <br>
 
-          <?php if(isset($parametros['falla']) && $parametros['falla'] == true): ?>
-            <div style="color: #FF0000"> Login Incorrecto</div>
-          <?php endif; ?>
+<form id="formulario" action="/log" method="post" >    <!-- onsubmit="return quitarEspacios()" -->
 
-            <form action="/log" method="post">
-          
+<div class="form-group">
+    <label>Ingrese nombre:</label>
+    <input type="text" class="form-control" maxlength="20" minlength="3" placeholder="Ingrese nombre " title="Mínimo de caracteres 3 y sin espacios" name="nombre" id="nombre" required>
+</div>
 
-              <div class="form-group">
-                <input type="text" name="nombre" 
-                placeholder="Correo del usuario" 
-                class="form-control" required><br>
-                
-                <input type="password" name="password" 
-                placeholder="Contraseña del usuario" 
-                class="form-control" required><br>
-                
-                <input type="submit"  value="Enviar"
-                class="btn btn-primary btn-block">
+<div class="form-group">
+    
+    <label>Ingrese contraseña:</label>
+    <input type="password" class="form-control" maxlength="255" minlength="3" placeholder="Ingrese contraseña" title="Mínimo de caracteres 3 y sin espacios" name="password" id="password" required>
+</div>
 
 
-              </div>
-            </form>
-           <!---------  <a href='?php echo constant('URL');?>                -----------> 
-              <button class='btn btn-light btn-block'>Volver</button>
-            </a>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+<!-- 
+<div class="form-group">
+    <label>Ingrese su correo electrónico:</label>
+    <input type="email" class="form-control" minlength="3" placeholder="ejemplo@ejemplo.com" title="Agregar correo electrónico" name="mail" id="mail" required>
+</div>
 
 
-    <!--------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   
-  </body>
+<div class="form-group">
+    <label>Ingrese su password:</label>
+    <input type="password" class="form-control" maxlength="15" minlength="8" required pattern="[A-Za-z0-9]+" placeholder="completar campo" title="Solo letras y números" name="password" id="password" required>
+</div>
+
+  
+<div class="form-group">
+     <label>Subir foto de perfil</label>
+      <input type="file" class="form-control-file border" name="foto" id="foto" style="border-radius:3px; padding:10px;">
+    </div> 
+ -->
+
+
+<input type="submit" value="Enviar" >
+  </form>
+</div>
+
+<div class="col-sx-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+</div>
+
+</div>
+</div>
+
+
+</body>
 </html>

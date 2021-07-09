@@ -13,7 +13,7 @@
                 call_user_func_array($contextoMiddleware['funcion'],$contexto);
             }
             else{
-                header("Location: /login");
+                header("Location: /log");
                 return;
             }
         }
@@ -23,7 +23,7 @@
                 cargarVista($contextoMiddleware['vista']);
             }
             else{
-                header("Location: /login");
+                header("Location: /log");
                 return;
             }
         }
