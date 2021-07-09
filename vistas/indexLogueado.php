@@ -18,14 +18,13 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         
-        
-  <a class="nav-link" href="/alta"><button type="button">Registrarse</button></a>
+     
   
     
     </li>     
       <li class="nav-item">
+
  
-    <a class="nav-link" href="/log"><button type="button">Iniciar sesión</button></a>
 
 
       </li>

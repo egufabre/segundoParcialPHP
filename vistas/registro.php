@@ -44,16 +44,14 @@
     <input type="password" class="form-control" maxlength="15" minlength="8" required pattern="[A-Za-z0-9]+" placeholder="completar campo" title="Solo letras y números" name="password" id="password" required>
 </div>
 
- <!--  
-<div class="form-group">
-     <label>Subir foto de perfil</label>
-      <input type="file" class="form-control-file border" name="foto" id="foto" style="border-radius:3px; padding:10px;">
-    </div> 
- -->
-
 
 <input type="submit" value="Enviar" >
+
+<a href="/index"><button type="button">Volver al menu</button></a>
+
   </form>
+
+  
 </div>
 
 <div class="col-sx-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
