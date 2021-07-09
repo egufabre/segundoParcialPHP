@@ -47,7 +47,7 @@
                     }
                 }
                 else {
-                    if($urlNavegador === $route['url']){
+                    if($urlNavegador === $route['url']  && $metodoNavegador === $route['metodo']){
                         $tipo = $route['tipo'];
                         $vista = $route['vista'];
                         self::$notFound = false;
@@ -56,7 +56,6 @@
                     }
                 }
             }
-
             if(self::$notFound) cargarVista("404");
             if($tipo === "vista") 
                 if($middleware)

@@ -31,11 +31,11 @@ class PostController{
         return generarHtml('index',['posts' => $posts]);
     }
 
-    /*public static function OrdenarFechas(){
+    public static function OrdenarFechas(){
         $u = new PostModelo();
         $fechas = array();
         foreach($u -> traerFechas() as $fecha){
-            $fecha = arrayFechas(
+            $fecha = array(
                 "anio" => $fecha -> anio,
                 "mes" => $fecha -> mes
             );
@@ -43,7 +43,7 @@ class PostController{
         }
         return generarHtml('index', ['fechas' => $fechas]);
     }
-*/
+
 
 
 

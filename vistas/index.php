@@ -46,9 +46,11 @@
 <aside>
 
  
-  <div class="sidebar">Historial de publicaciones 
-    <?php 
-      foreach ($arrayFechas as $fecha){
+  <div class="sidebar" Historial de publicaciones>
+  
+   <?php 
+      foreach ($parametros['fechas']  as $fecha)
+      {
         $valores = explode("-", $fecha);
         echo "<a href= '/index?anio=" . $valores[1] . "&mes" . $valores[0] . "'> " . $valores[1] . " " . $valores[0] . "</a>";
       }  

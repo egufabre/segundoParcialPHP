@@ -10,11 +10,10 @@
 
 
 
-    Routes::Add("/log","get","UsuarioController::MostrarLogin");
-    Routes::AddView("/log","login");
 
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
-   
+    Routes::AddView("/log","login");
+
 
     Routes::Add("/index","post","UsuarioController::MostrarMenuPrincipal","AuthMiddleware::EstaAutenticado");
     //Routes::AddView("/index","index","UsuarioController::MostrarMenuPrincipal");

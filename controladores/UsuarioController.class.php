@@ -11,8 +11,8 @@
                 $u -> nombre = $request['post']['nombre'];
                 $u -> password = $request['post']['password'];
                 $u -> Autenticar();
-                self::crearSesion($u);                
-                header("Location: /log");
+                self::crearSesion($u);
+                header("Location: /index");
                 
 
             }
