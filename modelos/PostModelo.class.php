@@ -49,19 +49,23 @@
                 array_push($filas,$u);
             }
             if($this -> conexion -> error){
-                throw new Exception("Error al obtener las personas: " . $this -> conexion -> error);
+                throw new Exception("Error al obtener posts: " . $this -> conexion -> error);
             }
             return $filas;
         }
         public function traerFechas(){
             $sql = "SELECT DISTINCT MONTH(fechapost) as mes, YEAR(fechapost) as anio FROM posteo ORDER BY mes,anio DESC";
-            $filas = array();
-            foreach($this -> conexion -> query($sql) -> fetch_all(MYSQLI_ASSOC) AS $fecha){
+            $fechas = array();
+            foreach($this -> conexion -> query($sql) -> fetch_all(MYSQLI_ASSOC) as $fecha){
                 $u = new PostModelo();
                 $u -> mes = $fecha['mes'];
                 $u -> anio = $fecha['anio'];
-                array_push($filas,$u);
+                array_push($fechas,$u);
             }
+            if($this -> conexion -> error){
+                throw new Exception("Error al obtener fechas: " . $this -> conexion -> error);
+            }
+            return $fechas;
         }
     
     
