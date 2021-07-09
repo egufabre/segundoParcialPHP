@@ -15,7 +15,7 @@
                 header("Location: /index");
                 
 
-            }
+            } 
             catch (Exception $e) {
                 error_log("Fallo login del usuario " . $request['post']['nombre']);
                 generarHtml("404",["falla" => true]);
@@ -37,13 +37,13 @@
 
 
 
-        public static function MostrarLogin($request){
+        public static function MostrarLogin(){
             session_start();
             if(isset($_SESSION['autenticado'])) header("Location: /index");
             else return cargarVista("login");
         }
 
-        public static function MostrarMenuPrincipal($request){
+        public static function MostrarMenuPrincipal(){
             session_start();
             if(isset($_SESSION['autenticado'])) header("Location: /log");
             else return cargarVista("index");
