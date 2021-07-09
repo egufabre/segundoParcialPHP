@@ -11,7 +11,7 @@
 
     Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
-    Routes::Add("/index","get","UsuarioController::MostrarMenuPrincipal");
+    //Routes::Add("/index","get","UsuarioController::MostrarMenuPrincipal");
     Routes::AddView("/log","login");
 
 

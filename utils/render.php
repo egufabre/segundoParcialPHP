@@ -1,7 +1,7 @@
 <?php 
     require '../utils/autoloader.php';
     
-    function generarHtml($vista,$parametros){
+    function generarHtml($vista,$contexto){
         return require "../vistas/$vista.php";
     }
 

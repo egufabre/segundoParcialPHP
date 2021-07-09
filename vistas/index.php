@@ -33,7 +33,7 @@
     <article>
     <br><br><br><br>
     <?php 
-    foreach ($parametros['posts']  as $fila)
+    foreach ($contexto['posts']  as $fila)
     {   
         echo $fila['titulopost'] . " " . $fila['cuerpopost'] . " " . $fila['fechapost'] . "<br>";
     }
@@ -49,7 +49,7 @@
   <div class="sidebar" Historial de publicaciones>
   
    <?php 
-      foreach ($parametros['fechas']  as $fecha)
+      foreach ($contexto['fechas']  as $fecha)
       {
         $valores = explode("-", $fecha);
         echo "<a href= '/index?anio=" . $valores[1] . "&mes" . $valores[0] . "'> " . $valores[1] . " " . $valores[0] . "</a>";
