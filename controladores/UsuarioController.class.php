@@ -25,6 +25,7 @@
 
         private static function crearSesion($usuario){
             session_start();
+            ob_start();
             $_SESSION['id'] = $usuario -> id;
             $_SESSION['nombre'] = $usuario -> nombre;
             $_SESSION['apellido'] = $usuario -> apellido;
@@ -38,13 +39,13 @@
 
         public static function MostrarLogin($request){
             session_start();
-            if(isset($_SESSION['autenticado'])) header("Location: /log");
+            if(isset($_SESSION['autenticado'])) header("Location: /index");
             else return cargarVista("login");
         }
 
         public static function MostrarMenuPrincipal($request){
             session_start();
-            if(isset($_SESSION['autenticado'])) header("Location: /index");
+            if(isset($_SESSION['autenticado'])) header("Location: /log");
             else return cargarVista("index");
         }
 

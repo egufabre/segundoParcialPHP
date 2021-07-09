@@ -9,10 +9,9 @@
     Routes::AddView("/altapost","ingresarpost");
 
 
-
-
+    Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
-    Routes::AddView("/log","login");
+    //Routes::AddView("/log","login");
 
 
     Routes::Add("/index","post","UsuarioController::MostrarMenuPrincipal","AuthMiddleware::EstaAutenticado");

@@ -79,6 +79,7 @@
             $this -> nombre = $resultado['nombre'];
             $this -> apellido = $resultado['apellido'];
             $this -> mail = $resultado['mail'];
+            //$this -> password = $resultado['password'];
 
         }
         
