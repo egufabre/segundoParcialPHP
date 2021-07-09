@@ -28,7 +28,10 @@ class PostController{
             );
             array_push($posts,$post);
         }
-        return generarHtml('index',['posts' => $posts]);
+        $fechas = self::OrdenarFechas();
+        
+
+        return generarHtml('index',['posts' => $posts, 'fechas' => $fechas]);
     }
 
     public static function OrdenarFechas(){
@@ -41,7 +44,7 @@ class PostController{
             );
             array_push($fechas, $fecha);
         }
-        return generarHtml('index', ['fechas' => $fechas]);
+        return $fechas;
     }
 
 

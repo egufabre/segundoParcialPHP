@@ -33,6 +33,7 @@
     <article>
     <br><br><br><br>
     <?php 
+
     foreach ($contexto['posts']  as $fila)
     {   
         echo $fila['titulopost'] . " " . $fila['cuerpopost'] . " " . $fila['fechapost'] . "<br>";
@@ -51,6 +52,7 @@
    <?php 
       foreach ($contexto['fechas']  as $fecha)
       {
+        
         $valores = explode("-", $fecha);
         echo "<a href= '/index?anio=" . $valores[1] . "&mes" . $valores[0] . "'> " . $valores[1] . " " . $valores[0] . "</a>";
       }  
