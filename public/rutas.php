@@ -8,6 +8,9 @@
     Routes::Add("/altapost","post","PostController::AltaDePost");
     Routes::AddView("/altapost","ingresarpost");
 
+    Routes::Add("/indexLogueado","post","UsuarioController::MostrarMenuPrincipal");
+    Routes::AddView("/indexLogueado","indexLogueado");
+
 
    // Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::Add("/log","post","UsuarioController::IniciarSesion");

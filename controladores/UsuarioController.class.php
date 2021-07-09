@@ -12,7 +12,7 @@
                 $u -> password = $request['post']['password'];
                 $u -> Autenticar();
                 self::crearSesion($u);
-                header("Location: /index");
+                header("Location: /indexLogueado");
                 
 
             } 

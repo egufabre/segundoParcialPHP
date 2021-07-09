@@ -55,6 +55,10 @@
 
 
 <input type="submit" value="Enviar" >
+
+<a href="/indexLogueado"><button type="button">Volver al menu</button></a>
+
+
   </form>
 </div>
 
