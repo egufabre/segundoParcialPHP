@@ -90,5 +90,30 @@
         private function hashearPassword($password){
             return password_hash($password,PASSWORD_DEFAULT);
         }
+
+
+        
+        public function obtenerUno($id){
+            $this -> prepararObtenerUno($id);
+            $resultado = $this -> sentencia -> execute() -> fetch_assoc();
+            if($this -> sentencia -> error){
+                throw new Exception("Error al obtener la personas: " . $this -> sentencia -> error);
+            }
+            $this -> asignarCamposDePersona($resultado);
+
+        }
+        private function prepararObtenerUno($id){
+            $sql = "SELECT id,nombre,apellido,mail FROM autor WHERE id = ?";
+            $this -> sentencia = $this -> conexion -> prepare($sql);
+            $this -> sentencia -> bind_param("i", $id);
+        }
+
+        private function asignarCamposDePersona($resultado){
+            $this -> id = $resultado['id'];
+            $this -> nombre = $resultado['nombre'];
+            $this -> apellido = $resultado['apellido'];
+            $this -> mail = $resultado['mail'];
+        }
+    
     }
 
