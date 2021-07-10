@@ -23,15 +23,15 @@
         private function prepararUpdate(){
             
            // $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?";
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("isss",
+            $this -> sentencia -> bind_param("issss",
                 $this -> id,
                 $this -> nombre,
                 $this -> apellido,
                 $this -> mail,
-                //$this -> password 
+                $this -> password 
                
             );
            
@@ -79,7 +79,7 @@
             $this -> sentencia = $this -> conexion -> prepare($sql);
             $this -> sentencia -> bind_param("s", $this -> nombre);
         }
-
+        
         private function asignarDatosDeUsuario($resultado){
             $this -> id = $resultado['id'];
             $this -> nombre = $resultado['nombre'];
@@ -111,7 +111,7 @@
         private function prepararObtenerUno($id){
             $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE id = ?";
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("i", $this -> $id);
+            $this -> sentencia -> bind_param("i", $id);
         }
 
         private function asignarCamposDePersona($resultado){

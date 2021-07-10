@@ -79,12 +79,12 @@
                 $u -> mail = $request['post']['mail'];
                 $u -> password = $request['post']['password'];
                 $u -> Guardar();
-                return generarHtml('modificarUsuario',['exito' => true]);
+                return generarHtml('editarRegistro',['exito' => true]);
 
             }
             catch(Exception $e){
                 error_Log($e -> getMessage());
-                return generarHtml('modificarUsuario',['exito' => false]);
+                return generarHtml('404',['exito' => false]);
             }
         }
         
