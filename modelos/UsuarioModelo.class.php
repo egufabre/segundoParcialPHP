@@ -14,21 +14,27 @@
             $this -> sentencia -> execute();
 
             if($this -> sentencia -> error){
-                throw new Exception("Hubo un problema al cargar el usuario: " . $this -> sentencia -> error);
+
+                echo "Entre";
+            throw new Exception("Hubo un problema al cargar el usuario: " . $this -> sentencia -> error);
             }
         }
 
         private function prepararUpdate(){
+            
             $this -> password = $this -> hashearPassword($this -> password);
             $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
+           
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_params("issss",
+            $this -> sentencia -> bind_param("issss",
                 $this -> id,
                 $this -> nombre,
                 $this -> apellido,
                 $this -> mail,
                 $this -> password 
+               
             );
+           
         }
         //funciona
         private function prepararInsert(){
@@ -79,7 +85,7 @@
             $this -> nombre = $resultado['nombre'];
             $this -> apellido = $resultado['apellido'];
             $this -> mail = $resultado['mail'];
-            //$this -> password = $resultado['password'];
+            $this -> password = $resultado['password'];
 
         }
         
@@ -103,9 +109,9 @@
 
         }
         private function prepararObtenerUno($id){
-            $sql = "SELECT id,nombre,apellido,mail FROM autor WHERE id = ?";
+            $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE id = ?";
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("i", $id);
+            $this -> sentencia -> bind_param("i",$this -> $id);
         }
 
         private function asignarCamposDePersona($resultado){
@@ -113,6 +119,7 @@
             $this -> nombre = $resultado['nombre'];
             $this -> apellido = $resultado['apellido'];
             $this -> mail = $resultado['mail'];
+            $this -> password = $resultado['password'];
         }
     
     }

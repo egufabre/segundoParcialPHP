@@ -73,18 +73,18 @@
         public static function ModificarUsuario($request){
             try{
                 $u = new UsuarioModelo();
-                $u -> obtenerUno($_SESSION['id']);
+                $u -> id = ($_SESSION['id']);
                 $u -> nombre = $request['post']['nombre'];
                 $u -> apellido = $request['post']['apellido'];
                 $u -> mail = $request['post']['mail'];
                 $u -> password = $request['post']['password'];
                 $u -> Guardar();
-                return generarHtml('modificarUsuario',['exito' => true]);
+                return generarHtml('editarRegistro',['exito' => true]);
                 
             }
             catch(Exception $e){
                 error_Log($e -> getMessage());
-                return generarHtml('modificarUsuario',['exito' => false]);
+                return generarHtml('404',['exito' => false]);
             }
         }
         

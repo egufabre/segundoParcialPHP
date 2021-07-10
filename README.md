@@ -26,12 +26,7 @@ create table posteo (
     id int auto_increment PRIMARY KEY NOT NULL,
     titulopost varchar(40) NOT NULL,
     cuerpopost varchar(500) NOT NULL,
-    fechapost timestamp  NOT NULL
-);
-
-create table autorPosteo (
-    idautor int NOT NULL,
-    idposteo int NOT NULL,
-    CONSTRAINT idautor_autorPosteo_fk FOREIGN KEY (idautor) REFERENCES autor (id),
-    CONSTRAINT idposteo_autorPosteo_fk FOREIGN KEY (idposteo) REFERENCES posteo (id)
+    fechapost timestamp  NOT NULL,
+    idautor int (20) NOT NULL,
+    CONSTRAINT idautor_posteo_fk FOREIGN KEY (idautor) REFERENCES autor (id)
 );

@@ -25,7 +25,7 @@
     </li>     
       <li class="nav-item">
 
-      <a class="nav-link" href="/altapost"><button type="button">Editar post</button></a>
+      <a class="nav-link" href="/editar"><button type="button">Editar datos</button></a>
 
       <a class="nav-link" href="/altapost"><button type="button">Cerrar sesion</button></a>
 
