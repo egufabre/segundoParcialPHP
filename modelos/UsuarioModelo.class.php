@@ -12,6 +12,7 @@
 
             $this -> id ? $this -> prepararUpdate() : $this -> prepararInsert();
             $this -> sentencia -> execute();
+       
 
             if($this -> sentencia -> error){
 
@@ -22,8 +23,8 @@
 
         private function prepararUpdate(){
             
-           // $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
+            $this -> password = $this -> hashearPassword($this -> password);
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ? where id=3 ";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
             $this -> sentencia -> bind_param("issss",
@@ -101,13 +102,20 @@
         
         public function obtenerUno($id){
             $this -> prepararObtenerUno($id);
-            $resultado = $this -> sentencia -> execute() -> fetch_assoc();
+            
+            $this -> sentencia -> execute();
+            $resultado = $this -> sentencia -> get_result() -> fetch_assoc();
+            
+            //$resultado = $this -> sentencia -> execute() -> fetch_assoc();
+
             if($this -> sentencia -> error){
                 throw new Exception("Error al obtener la personas: " . $this -> sentencia -> error);
             }
             $this -> asignarCamposDePersona($resultado);
+            //echo "<pre>";print_r($resultado);
 
         }
+
         private function prepararObtenerUno($id){
             $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE id = ?";
             $this -> sentencia = $this -> conexion -> prepare($sql);

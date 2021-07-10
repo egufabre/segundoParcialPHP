@@ -13,10 +13,14 @@ class PostController{
         }
         catch(Exception $e){
             error_log($e -> getMessage());
-            return generarHtml('formularioInsertUsuario',['exito' =>false]);
+            return generarHtml('404',['exito' =>false]);
         }
     }
 
+
+
+
+    
     public static function ObtenerPost(){
         $u = new PostModelo();
         $posts = array();

@@ -27,7 +27,9 @@
 
       <a class="nav-link" href="/editar"><button type="button">Editar datos</button></a>
 
-      <a class="nav-link" href="/altapost"><button type="button">Cerrar sesion</button></a>
+
+      <a class="nav-link" href="/index"><button type="button">Cerrar sesion</button></a>
+
 
 
       </li>
@@ -39,7 +41,11 @@
 <section>
     <article>
     <br><br><br><br>
+
+    <h2 align="center">Listado de posts:</h2>
     <?php 
+
+    
 
     foreach ($contexto['posts']  as $fila)
     {   
@@ -75,7 +81,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 <div class="w3-container">
-
+<!---
 <h2 class="center">Páginas</h2>
 
 
@@ -89,6 +95,8 @@
   <a href="#" class="w3-button">&raquo;</a>
 </div>
 </div>
+
+    --->
 
 </div>
 </body>

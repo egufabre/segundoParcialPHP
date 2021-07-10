@@ -25,7 +25,7 @@
 
         private static function crearSesion($usuario){
             session_start();
-            //ob_start();
+            ob_start();
             $_SESSION['id'] = $usuario -> id;
             $_SESSION['nombre'] = $usuario -> nombre;
             $_SESSION['apellido'] = $usuario -> apellido;
@@ -33,9 +33,6 @@
             $_SESSION['autenticado'] = true;
 
         }
-
-
-
 
         public static function MostrarLogin(){
             session_start();
@@ -49,10 +46,7 @@
             else return cargarVista("index");
         }
 
-      
-
-
-      
+ 
         //funciona
         public static function AltaDeUsuario($request){
             try{
@@ -73,7 +67,12 @@
         public static function ModificarUsuario($request){
             try{
                 $u = new UsuarioModelo();
+
+                //inventoYisus $u -> id= ($_SESSION['id']);
+                //graciasFabre $u -> obtenerUno($resultado);
+
                 $u -> obtenerUno($_SESSION['id']);
+                
                 $u -> nombre = $request['post']['nombre'];
                 $u -> apellido = $request['post']['apellido'];
                 $u -> mail = $request['post']['mail'];

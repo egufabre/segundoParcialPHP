@@ -37,11 +37,18 @@
 <section>
     <article>
     <br><br><br><br>
+
+    <h2 align="center">Listado de posts:</h2>
     <?php 
 
     foreach ($contexto['posts']  as $fila)
     {   
-        echo $fila['titulopost'] . " " . $fila['cuerpopost'] . " " . $fila['fechapost'] . "<br>";
+
+
+
+
+
+      echo "<b>Titulo del post.</b>  " . $fila['titulopost'] . "  <b>Cuerpo del post.</b>  " . $fila['cuerpopost'] . " <b>Fecha del post.</b>  " . $fila['fechapost'] . "<br>";
     }
   
     ?>
@@ -74,6 +81,7 @@
 <body>
 <div class="w3-container">
 
+<!---
 <h2 class="center">Páginas</h2>
 
 
@@ -87,6 +95,8 @@
   <a href="#" class="w3-button">&raquo;</a>
 </div>
 </div>
+
+    --->
 
 </div>
 </body>

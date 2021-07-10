@@ -27,6 +27,6 @@ create table posteo (
     titulopost varchar(40) NOT NULL,
     cuerpopost varchar(500) NOT NULL,
     fechapost timestamp  NOT NULL,
-    idautor int (20) NOT NULL,
+    idautor int (20) ,
     CONSTRAINT idautor_posteo_fk FOREIGN KEY (idautor) REFERENCES autor (id)
 );
