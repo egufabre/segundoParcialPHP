@@ -22,16 +22,16 @@
 
         private function prepararUpdate(){
             
-            $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
+           // $this -> password = $this -> hashearPassword($this -> password);
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("issss",
+            $this -> sentencia -> bind_param("isss",
                 $this -> id,
                 $this -> nombre,
                 $this -> apellido,
                 $this -> mail,
-                $this -> password 
+                //$this -> password 
                
             );
            
@@ -111,7 +111,7 @@
         private function prepararObtenerUno($id){
             $sql = "SELECT id,nombre,apellido,mail,password FROM autor WHERE id = ?";
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("i",$this -> $id);
+            $this -> sentencia -> bind_param("i", $this -> $id);
         }
 
         private function asignarCamposDePersona($resultado){
