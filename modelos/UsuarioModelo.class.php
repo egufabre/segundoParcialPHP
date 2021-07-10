@@ -16,15 +16,15 @@
 
             if($this -> sentencia -> error){
 
-                echo "Entre";
+                echo "Error en la UsuarioModelo:Guardar";
             throw new Exception("Hubo un problema al cargar el usuario: " . $this -> sentencia -> error);
             }
         }
-
+        //Para que funcione, agregar WHERE = 4, por ej.
         private function prepararUpdate(){
             
             $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ? where id=3 ";
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
             $this -> sentencia -> bind_param("issss",
