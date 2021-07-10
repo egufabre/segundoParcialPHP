@@ -44,10 +44,6 @@
     foreach ($contexto['posts']  as $fila)
     {   
 
-
-
-
-
       echo "<b>Titulo del post.</b>  " . $fila['titulopost'] . "  <b>Cuerpo del post.</b>  " . $fila['cuerpopost'] . " <b>Fecha del post.</b>  " . $fila['fechapost'] . "<br>";
     }
   

@@ -30,6 +30,7 @@
             $_SESSION['nombre'] = $usuario -> nombre;
             $_SESSION['apellido'] = $usuario -> apellido;
             $_SESSION['mail'] = $usuario -> mail;
+            $_SESSION['password'] = $usuario -> password;
             $_SESSION['autenticado'] = true;
 
         }
@@ -67,12 +68,7 @@
         public static function ModificarUsuario($request){
             try{
                 $u = new UsuarioModelo();
-
-                //inventoYisus $u -> id= ($_SESSION['id']);
-                //graciasFabre $u -> obtenerUno($resultado);
-
                 $u -> obtenerUno($_SESSION['id']);
-                
                 $u -> nombre = $request['post']['nombre'];
                 $u -> apellido = $request['post']['apellido'];
                 $u -> mail = $request['post']['mail'];

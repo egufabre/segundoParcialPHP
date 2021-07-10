@@ -25,8 +25,10 @@
     Routes::Add("/index","post","UsuarioController::MostrarMenuPrincipal","AuthMiddleware::EstaAutenticado");
     Routes::AddView("/index","index","PostController::ObtenerPost");
 
-   // Routes::Add("/indexLogueado","post","UsuarioController::MostrarMenuPrincipal");
-    //Routes::AddView("/indexLogueado","indexLogueado","PostController::ObtenerPost");
+
+
+    //Routes::Add("/indexLogueado","post","UsuarioController::MostrarMenuPrincipal");
+    // Routes::AddView("/indexLogueado","indexLogueado","PostController::ObtenerPost");
 
 
     Routes::Run();

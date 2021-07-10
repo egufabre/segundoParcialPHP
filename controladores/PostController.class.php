@@ -18,8 +18,6 @@ class PostController{
     }
 
 
-
-
     
     public static function ObtenerPost(){
         $u = new PostModelo();
