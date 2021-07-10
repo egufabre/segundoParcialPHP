@@ -25,7 +25,7 @@
 
         private static function crearSesion($usuario){
             session_start();
-            ob_start();
+            //ob_start();
             $_SESSION['id'] = $usuario -> id;
             $_SESSION['nombre'] = $usuario -> nombre;
             $_SESSION['apellido'] = $usuario -> apellido;
@@ -73,18 +73,18 @@
         public static function ModificarUsuario($request){
             try{
                 $u = new UsuarioModelo();
-                $u -> id = ($_SESSION['id']);
+                $u -> obtenerUno($_SESSION['id']);
                 $u -> nombre = $request['post']['nombre'];
                 $u -> apellido = $request['post']['apellido'];
                 $u -> mail = $request['post']['mail'];
                 $u -> password = $request['post']['password'];
                 $u -> Guardar();
-                return generarHtml('editarRegistro',['exito' => true]);
-                
+                return generarHtml('modificarUsuario',['exito' => true]);
+
             }
             catch(Exception $e){
                 error_Log($e -> getMessage());
-                return generarHtml('404',['exito' => false]);
+                return generarHtml('modificarUsuario',['exito' => false]);
             }
         }
         
