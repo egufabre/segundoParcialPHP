@@ -24,7 +24,7 @@
         private function prepararUpdate(){
             
             $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ?";
+            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ? where id=13";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
             $this -> sentencia -> bind_param("issss",
