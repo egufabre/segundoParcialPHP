@@ -20,20 +20,19 @@
             throw new Exception("Hubo un problema al cargar el usuario: " . $this -> sentencia -> error);
             }
         }
-        //Para que funcione, agregar WHERE = 4, por ej.
+      
         private function prepararUpdate(){
             
             $this -> password = $this -> hashearPassword($this -> password);
-            $sql = "UPDATE autor set id = ?, nombre = ?, apellido = ?, mail = ?, password = ? where id=13";
+            $sql = "UPDATE autor set  nombre = ?, apellido = ?, mail = ?, password = ? where id= ?";
            
             $this -> sentencia = $this -> conexion -> prepare($sql);
-            $this -> sentencia -> bind_param("issss",
-                $this -> id,
+            $this -> sentencia -> bind_param("ssssi",
                 $this -> nombre,
                 $this -> apellido,
                 $this -> mail,
-                $this -> password 
-               
+                $this -> password, 
+                $this -> id
             );
            
         }
@@ -105,9 +104,7 @@
             
             $this -> sentencia -> execute();
             $resultado = $this -> sentencia -> get_result() -> fetch_assoc();
-            
-            //$resultado = $this -> sentencia -> execute() -> fetch_assoc();
-
+ 
             if($this -> sentencia -> error){
                 throw new Exception("Error al obtener la personas: " . $this -> sentencia -> error);
             }
