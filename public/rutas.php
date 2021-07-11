@@ -14,10 +14,8 @@
     Routes::Add("/editar","post","UsuarioController::ModificarUsuario");
     Routes::AddView("/editar","editarRegistro");
 
-
-
-
-   // Routes::Add("/log","get","UsuarioController::MostrarLogin");
+   
+    // Routes::Add("/log","get","UsuarioController::MostrarLogin");
     Routes::Add("/log","post","UsuarioController::IniciarSesion");
     Routes::AddView("/log","login");
 

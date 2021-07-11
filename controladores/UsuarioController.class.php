@@ -68,7 +68,8 @@
         public static function ModificarUsuario($request){
             try{
                 $u = new UsuarioModelo();
-                $u -> obtenerUno($_SESSION['id']);
+                $u -> id = $_SESSION['id'];
+                //echo "<pre>";print_r($_SESSION['id']);
                 $u -> nombre = $request['post']['nombre'];
                 $u -> apellido = $request['post']['apellido'];
                 $u -> mail = $request['post']['mail'];
